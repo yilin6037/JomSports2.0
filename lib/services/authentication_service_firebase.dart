@@ -76,7 +76,7 @@ class AuthenticationServiceFirebase {
   }
 
   Future<bool> resetPassword(String email) async {
-    assert(email.isNotEmpty, "Email and password must not be empty");
+    assert(email.isNotEmpty, "Email must not be empty");
     return await _auth.sendPasswordResetEmail(email: email).then((_) {
       return true;
     }).catchError((e) {
